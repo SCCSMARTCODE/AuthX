@@ -4,8 +4,6 @@
 ### Project Description
 **AuthX** is a versatile and reusable authentication API built to work seamlessly with both Flask and FastAPI. It supports multiple authentication methods, including traditional username/password login, OAuth 2.0 with social logins (Google, Facebook, GitHub, etc.), two-factor authentication (2FA), passwordless login, and more. AuthX is designed with security and flexibility in mind, making it easy to integrate into various applications while providing robust user management and role-based access control (RBAC).
 
-### README.md
-```markdown
 # AuthX
 
 **AuthX** is a reusable and modular authentication API designed to work with both Flask and FastAPI. It offers a wide range of authentication methods, making it an ideal solution for projects that require secure and flexible user authentication.
