@@ -1,0 +1,6 @@
+alembic==1.13.2
+fastapi==0.112.0
+Flask==3.0.3
+python-dotenv==1.0.1
+SQLAlchemy==2.0.32
+uvicorn==0.30.6

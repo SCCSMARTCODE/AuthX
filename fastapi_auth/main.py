@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import uvicorn
 
 
-app = FastAPI()
+app = FastAPI(title='AuthX', description="FastAPI section of AuthX", version="1.0.0")
 
 
 @app.get('/')
@@ -11,4 +11,4 @@ def main():
 
 
 if __name__ == '__main__':
-    uvicorn.run('main:app', reload=True)
+    uvicorn.run('main:app', reload=True, host='localhost')

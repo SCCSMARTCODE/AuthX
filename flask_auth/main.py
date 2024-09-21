@@ -1,8 +1,13 @@
-from flask import Flask
 from dotenv import load_dotenv
+load_dotenv(dotenv_path='../.env')
 
-app = Flask(__name__)
-load_dotenv(dotenv_path='.env.sample')
+from api.v1 import CreateApp
+from api.v1.routes import get_namespace_update
+
+create_app = CreateApp(get_namespace_update())
+
+app = create_app.app
+api = create_app.api
 
 
 @app.route('/')
