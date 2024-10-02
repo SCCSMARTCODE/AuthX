@@ -28,3 +28,15 @@
 2024-09-21 06:02:18,882 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 40 - Get User By Email Fetched User: <db.model.user.Users object at 0x000001BCD136FFE0>
 2024-09-21 06:03:04,920 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 40 - Get User By Email Fetched User: <db.model.user.Users object at 0x000001BCD13E0F20>
 2024-09-21 06:03:15,394 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 40 - Get User By Email Fetched User: None
+2024-10-02 23:14:03,899 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 45 - Get User By Email Fetched User: <db.model.user.Users object at 0x000001DAA7CA4680>
+2024-10-02 23:16:03,860 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 45 - Get User By Email Fetched User: <db.model.user.Users object at 0x000001FC44C72DE0>
+2024-10-02 23:21:27,391 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 45 - Get User By Email Fetched User: <db.model.user.Users object at 0x00000169AD5DF890>
+2024-10-02 23:22:11,733 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 45 - Get User By Email Fetched User: <db.model.user.Users object at 0x0000026B2DD1F680>
+2024-10-02 23:28:34,922 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 45 - Get User By Email Fetched User: <db.model.user.Users object at 0x000002695C5FF650>
+2024-10-02 23:31:39,042 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 45 - Get User By Email Fetched User: <db.model.user.Users object at 0x000001FAB6E9F2C0>
+2024-10-02 23:33:02,892 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 45 - Get User By Email Fetched User: <db.model.user.Users object at 0x000001FAB6E6EB10>
+2024-10-02 23:35:24,900 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 45 - Get User By Email Fetched User: <db.model.user.Users object at 0x000001D6472BF680>
+2024-10-02 23:38:41,002 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 45 - Get User By Email Fetched User: <db.model.user.Users object at 0x000001ECA3413470>
+2024-10-02 23:39:10,574 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 45 - Get User By Email Fetched User: <db.model.user.Users object at 0x0000025C3A97F8C0>
+2024-10-02 23:40:45,600 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 45 - Get User By Email Fetched User: <db.model.user.Users object at 0x00000188F5BF3560>
+2024-10-02 23:41:54,720 - AuthXFLASKAPP - INFO - File: user.py, Function: get_user_by_email, Line: 45 - Get User By Email Fetched User: <db.model.user.Users object at 0x0000019D32BBF530>

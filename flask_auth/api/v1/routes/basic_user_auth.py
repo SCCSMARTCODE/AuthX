@@ -4,9 +4,11 @@ from werkzeug.exceptions import BadRequest
 from flask import make_response, jsonify
 from .routes import basic_user_ns
 from flask_auth.api.v1.schemas.basic_user_auth import SignUpSchema,  SignUpSuccessResponseModel, LoginSchema, ForgetPWSchema, UnauthorizedErrorModel, ServerErrorModel, ValidationErrorModel, LoginSuccessResponseModel
-from shared.services.user import create_user, get_user_by_email
+from shared.services.user import create_user, get_user_by_email, send_account_activation_mail
 from shared.services.token import generate_token, generate_refresh_token
 from shared.services.pw_bcrypt import check_pw
+from db.engine import session_manager
+from db.model.user import Users
 
 
 @basic_user_ns.route('/signup')
@@ -27,9 +29,7 @@ class BasicUserSignUp(Resource):
             raise e
 
         elif result is False:
-            e = BadRequest('My custom message')
-            e.data = {'error': 'Internal Server Error'}
-            raise e
+            abort(500, 'Internal Server Error')
 
         user = create_user(args)
         token = generate_token(user_id=str(user.get_id()), token_key=os.getenv('APP_TOKEN_KEY'))
@@ -111,7 +111,40 @@ class BasicUserChangePW(Resource):
 class BasicUserActivateAccount(Resource):
     @staticmethod
     def get(token: str):
+        pass
+
+
+@basic_user_ns.route('/init_account_activation/<email>')
+class BasicUserActivateAccountEmail(Resource):
+    @staticmethod
+    def get(email: str):
+        user = get_user_by_email(email)
+        if user is None:
+            e = BadRequest('My custom message')
+            e.data = {'error': 'Bad Request', 'message': f'User with Email[{email}] not found'}
+            raise e
+        elif user is False:
+            abort(500, 'Internal Server Error')
+        send_account_activation_mail(email)
         return {
-            'type': 'activate_account',
-            'token': token
-        }, 200
+            "message": "Activation Mail Sent Successfully",
+        }
+
+
+
+@basic_user_ns.route('/users')
+class GetUsers(Resource):
+    @staticmethod
+    def get():
+        users = []
+        with session_manager() as session:
+            results = session.query(Users).all()
+            for result in results:
+                users.append(
+                    {
+                        "email": result.email,
+                        "id": str(result.get_id()),
+                        "is_verified": result.is_verified
+                    }
+                )
+        return users, 200
